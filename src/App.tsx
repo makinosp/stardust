@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { AuthState, GitHubRepo } from './types';
-import { GitHubAPI, getGitHubAuthURL } from './github-api';
+import { GitHubAPI } from './github-api';
 import './App.css';
 
 export function App() {
@@ -28,7 +28,7 @@ export function App() {
     }
   }, []);
 
-  const handleOAuthCallback = async (code: string) => {
+  const handleOAuthCallback = async (_code: string) => {
     try {
       setLoading(true);
       setError(null);
